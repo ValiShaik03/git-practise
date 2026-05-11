@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 Main Version 
+=======
+Branch Version
+>>>>>>> conflict-test
+Final Version
