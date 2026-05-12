@@ -34,15 +34,15 @@ GitHub is a cloud platform that stores Git repositories online.
 # 3. Important Git Workflow
 
 ```text
- Working Directory
+Working Directory
        ↓
-    git add
+git add
        ↓
- Staging Area
+Staging Area
        ↓
-  git commit
+git commit
        ↓
-  Repository
+Repository
 ```
 
 ---
@@ -544,26 +544,298 @@ git merge branch_name
 
 ---
 
-# 26. Current Learning Status
+# 26. Pull Request (PR)
+
+## What is Pull Request?
+
+A Pull Request (PR) is:
+
+```text
+A request to merge one branch into another branch.
+```
+
+Usually:
+
+```text
+feature branch → main branch
+```
+
+---
+
+# Why Pull Requests Exist
+
+Pull Requests are used for:
+
+* code review
+* team collaboration
+* approval before merge
+* discussion on changes
+* preventing bad code from entering main branch
+
+---
+
+# Simple Understanding
+
+Instead of directly merging:
+
+```bash
+git merge feature1
+```
+
+Developers usually:
+
+1. push feature branch to GitHub
+2. create Pull Request
+3. teammates review code
+4. approve changes
+5. merge into main
+
+---
+
+# Real Company Workflow
+
+```text
+Create branch
+↓
+Write code
+↓
+git add .
+↓
+git commit
+↓
+git push -u origin branch_name
+↓
+Create Pull Request on GitHub
+↓
+Code Review
+↓
+Approve
+↓
+Merge into main
+```
+
+---
+
+# Important Understanding
+
+## git push
+
+```bash
+git push -u origin feature-login
+```
+
+ONLY uploads branch to GitHub.
+
+It does NOT merge anything.
+
+---
+
+# Actual Merge Happens After PR Approval
+
+GitHub merges branch after:
+
+* review
+* approval
+* testing
+
+---
+
+# Difference Between Merge and Pull Request
+
+| Git Merge                | Pull Request                  |
+| ------------------------ | ----------------------------- |
+| Git command              | GitHub feature                |
+| Local operation          | Online collaboration workflow |
+| Immediate merge          | Review before merge           |
+| Mostly personal projects | Team/company workflow         |
+
+---
+
+# Pull Request Workflow Example
+
+## Step 1 — Create Branch
+
+```bash
+git branch login-feature
+git switch login-feature
+```
+
+---
+
+## Step 2 — Make Changes
+
+Edit files.
+
+---
+
+## Step 3 — Commit Changes
+
+```bash
+git add .
+git commit -m "Added login feature"
+```
+
+---
+
+## Step 4 — Push Branch
+
+```bash
+git push -u origin login-feature
+```
+
+Meaning:
+
+```text
+Upload login-feature branch to GitHub
+```
+
+---
+
+## Step 5 — Create Pull Request
+
+On GitHub:
+
+```text
+Compare & Pull Request
+```
+
+Then:
+
+```text
+login-feature → main
+```
+
+Meaning:
+
+```text
+Request to merge login-feature into main
+```
+
+---
+
+# What Happens in PR Review?
+
+Teammates can:
+
+* review code
+* comment on lines
+* request changes
+* approve merge
+
+---
+
+# Why Companies Prefer PRs
+
+Because PRs provide:
+
+✅ safer code
+✅ collaboration
+✅ review system
+✅ cleaner development workflow
+✅ easier debugging
+
+---
+
+# Important Interview Answer
+
+## What is Pull Request?
+
+```text
+A Pull Request is a request to merge changes from one branch into another branch after review and approval.
+```
+
+---
+
+# Simple Analogy
+
+## Direct Merge
+
+```text
+Directly adding pages into final assignment.
+```
+
+---
+
+## Pull Request
+
+```text
+Submitting draft for teacher review before final submission.
+```
+
+---
+
+# Important Commands
+
+## Create Branch
+
+```bash
+git branch feature-name
+```
+
+---
+
+## Switch Branch
+
+```bash
+git switch feature-name
+```
+
+---
+
+## Commit Changes
+
+```bash
+git add .
+git commit -m "message"
+```
+
+---
+
+## Push Branch
+
+```bash
+git push -u origin branch_name
+```
+
+---
+
+# Important Concept
+
+PR is NOT replacing merge.
+
+Internally:
+
+```text
+Pull Request eventually performs a merge.
+```
+
+But with:
+
+* review
+* discussion
+* approval process added.
+
+---
+
+# 27. Current Learning Status
 
 Completed:
 
 * Git basics
 * GitHub basics
-* Commits
-* Staging area
 * Push/Pull
 * Clone
 * Branching
 * Merge
-* Merge conflict basics
+* Merge conflicts
+* Pull Requests
 
-Next Topics:
+Remaining Important Topics:
 
-* Pull Requests (PR)
-* Forking
-* Git Ignore
+* `.gitignore`
 * Undo commands
+* `git stash`
 * Rebase basics
+* Forking
+* Open source workflow
 * Real team workflow
-* Open source contribution basics
