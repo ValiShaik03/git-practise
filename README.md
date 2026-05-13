@@ -817,25 +817,259 @@ But with:
 
 ---
 
-# 27. Current Learning Status
+# 25. `.gitignore`
 
-Completed:
+## Purpose
 
-* Git basics
-* GitHub basics
-* Push/Pull
-* Clone
-* Branching
-* Merge
-* Merge conflicts
-* Pull Requests
+```text
+Ignore files/folders from Git tracking.
+```
 
-Remaining Important Topics:
+---
 
-* `.gitignore`
-* Undo commands
-* `git stash`
-* Rebase basics
-* Forking
-* Open source workflow
-* Real team workflow
+## Example
+
+```text
+.env
+venv/
+node_modules/
+__pycache__/
+```
+
+---
+
+# Important Rule
+
+`.gitignore` works properly only before file becomes tracked.
+
+---
+
+# 26. `.env` Security
+
+Never upload:
+- API keys
+- passwords
+- tokens
+
+Usually add:
+
+```text
+.env
+```
+
+inside `.gitignore`.
+
+---
+
+# 27. `git rm --cached`
+
+## Purpose
+
+```text
+Stop tracking file but keep it locally.
+```
+
+---
+
+## Example
+
+```bash
+git rm --cached .env
+```
+
+Used when `.env` was accidentally tracked.
+
+---
+
+# 28. Undo Commands
+
+---
+
+# `git restore`
+
+## Purpose
+
+```text
+Discard local uncommitted changes.
+```
+
+---
+
+## Example
+
+```bash
+git restore hello.txt
+```
+
+---
+
+# `git restore --staged`
+
+## Purpose
+
+```text
+Remove file from staging area without deleting changes.
+```
+
+---
+
+## Example
+
+```bash
+git restore --staged hello.txt
+```
+
+---
+
+# 29. `git reset`
+
+Moves HEAD backward.
+
+HEAD means:
+
+```text
+Current/latest commit position
+```
+
+---
+
+# `git reset --soft`
+
+## Purpose
+
+```text
+Remove commit but keep staged changes.
+```
+
+---
+
+## Example
+
+```bash
+git reset --soft HEAD~1
+```
+
+---
+
+# `git reset --mixed`
+
+## Purpose
+
+```text
+Remove commit and unstage files but keep changes.
+```
+
+---
+
+## Example
+
+```bash
+git reset HEAD~1
+```
+
+---
+
+# `git reset --hard`
+
+## Purpose
+
+```text
+Remove commits and permanently delete changes.
+```
+
+---
+
+## Example
+
+```bash
+git reset --hard HEAD~1
+```
+
+⚠️ Dangerous command.
+
+---
+
+# 30. `git revert`
+
+## Purpose
+
+```text
+Undo committed changes safely without deleting commit history.
+```
+
+---
+
+## Important Understanding
+
+`git revert`:
+- keeps old commit history
+- creates new commit
+- removes previous changes safely
+
+---
+
+## Example
+
+```bash
+git revert commit_id
+```
+
+---
+
+# Difference Between Reset and Revert
+
+| Reset | Revert |
+|---|---|
+| Removes commits | Keeps history |
+| Rewrites history | Creates reverse commit |
+| Dangerous in teams | Safe in teams |
+
+---
+
+# 31. Important Daily Workflow
+
+```text
+git pull
+↓
+write code
+↓
+git status
+↓
+git add .
+↓
+git commit -m "message"
+↓
+git push
+```
+
+---
+
+# 32. Most Important Interview Concepts
+
+| Topic | Understanding |
+|---|---|
+| Commit | snapshot/save point |
+| Branch | isolated development timeline |
+| Merge | combine branches |
+| PR | review before merge |
+| Staging Area | ready-to-commit area |
+| `.gitignore` | ignore files from tracking |
+| Merge Conflict | Git unable to auto-merge |
+| Revert | safe undo |
+| Reset | move/remove commits |
+
+---
+
+# 33. Current Skill Level
+
+You now understand:
+
+✅ Git basics  
+✅ GitHub workflow  
+✅ Branching  
+✅ Merge conflicts  
+✅ Pull Requests  
+✅ `.gitignore`  
+✅ Undo commands  
+✅ Reset vs Revert  
+✅ Practical Git workflows
